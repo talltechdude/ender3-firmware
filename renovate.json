@@ -13,7 +13,7 @@
                 "build.yaml$"
             ],
             "matchStrings": [
-                "repository: (?<depName>.*?)\\sref: (?<currentValue>.*)\\s"
+                "repository: (?<depName>.*?)\\s+ref: (?<currentValue>.*)\\s"
             ],
             "datasourceTemplate": "github-releases",
             "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
