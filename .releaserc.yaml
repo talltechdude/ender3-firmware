@@ -7,10 +7,7 @@ plugins:
   - "@semantic-release/release-notes-generator"
   - "@semantic-release/changelog"
   - "@semantic-release/git"
-  - "@semantic-release/github":
-      assets:
-        - path: firmware.bin
-          label: firmware.bin
+  - "@semantic-release/github"
 verifyConditions:
   - '@semantic-release/git'
   - "@semantic-release/github"
@@ -68,7 +65,9 @@ prepare:
     changelogFile: "CHANGELOG.md"
 publish:
   - path: "@semantic-release/github"
-
+    assets: 
+      - path: firmware.bin
+        label: firmware.bin
 success:
   - "@semantic-release/github"
 
