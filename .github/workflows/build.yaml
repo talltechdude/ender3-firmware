@@ -48,7 +48,7 @@ jobs:
         ls -al Marlin/
       working-directory: ./Firmware
     - name: Run PlatformIO
-      run: pio ci
+      run: pio ci .
       working-directory: ./Firmware
       # env:
       #   PLATFORMIO_CI_SRC: ${{ matrix.example }}
