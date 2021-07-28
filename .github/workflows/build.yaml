@@ -20,6 +20,24 @@ jobs:
       with:
         repository: th3dstudio/UnifiedFirmware
         ref: "2.31"
+        path: upstream
+
+    # with:
+      #   repository: talltechdude/ender3-firmware
+    # - run: |
+    #     pwd
+    #     ls -al
+    #     ls -al upstream/
+    - name: Prepare custom config
+      run: |
+        # pwd
+        # ls -al ../
+        # ls -al
+        cp "upstream/Board Configuration Files/TH3D_EZBoardLite/Firmware/platformio.ini" upstream/Firmware/
+        cat Configuration_pre.h "upstream/Board Configuration Files/TH3D_EZBoardLite/Firmware/Marlin/Configuration.h" Configuration_post.h > upstream/Firmware/Marlin/Configuration.h
+        # ls -al upstream/Firmware
+        # ls -al upstream/Firmware/Marlin/
+        # cat upstream/Firmware/Marlin/Configuration.h
 
     - name: Cache pip
       uses: actions/cache@v2
@@ -38,18 +56,11 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install --upgrade platformio
-    - name: Prepare custom config
-      run: |
-        pwd
-        ls -al
-        cp "../Board Configuration Files/TH3D_EZBoardLite/Firmware/platformio.ini" .
-        cat ../Configuration_pre.h "../Board Configuration Files/TH3D_EZBoardLite/Firmware/Marlin/Configuration.h" ../Configuration_post.h > Marlin/Configuration.h
-        ls -al
-        ls -al Marlin/
-      working-directory: ./Firmware
     - name: Run PlatformIO
-      #run: pio ci --project-conf platformio.ini .
       run: pio run
-      working-directory: ./Firmware
-      # env:
-      #   PLATFORMIO_CI_SRC: ${{ matrix.example }}
+      working-directory: ./upstream/Firmware
+    - name: Export artifact
+      run: |
+        ls -al .pio/build/
+        ls -al .pio/build/TH3D_EZBoardLite
+      working-directory: ./upstream/Firmware
