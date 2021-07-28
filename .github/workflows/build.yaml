@@ -58,7 +58,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: th3dstudio/UnifiedFirmware
-        ref: 2.27
+        ref: 2.31
         path: upstream
 
     # with:
