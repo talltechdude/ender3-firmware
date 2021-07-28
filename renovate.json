@@ -1,0 +1,33 @@
+{
+    "extends": [
+        "config:base"
+    ],
+    "dependencyDashboard": true,
+    "prHourlyLimit": 10,
+    "semanticCommits": "enabled",
+    "semanticCommitType": "fix",
+    "requiredStatusChecks": null,
+    "regexManagers": [
+        {
+            "fileMatch": [
+                "build.yaml$"
+            ],
+            "matchStrings": [
+                "repository: (?<depName>.*?)\\sref: (?<currentValue>.*)\\s"
+            ],
+            "datasource": "github-releases",
+            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+        }
+    ],
+    "packageRules": [
+        {
+            "matchUpdateTypes": [
+                "minor",
+                "patch",
+                "pin",
+                "digest"
+            ],
+            "automerge": false
+        }
+    ]
+}
