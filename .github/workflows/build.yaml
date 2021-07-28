@@ -73,7 +73,8 @@ jobs:
         # ls -al ../
         # ls -al
         cp "upstream/Board Configuration Files/TH3D_EZBoardLite/Firmware/platformio.ini" upstream/Firmware/
-        sed -e '/\/\/#@CONFIGURATION_START_FLAG/,/\/\/#@CONFIGURATION_END_FLAG/!b' -e '/end/!d;r Configuration.h' -e 'd' "upstream/Board Configuration Files/TH3D_EZBoardLite/Firmware/Marlin/Configuration.h"
+        #sed -e '/\/\/#@CONFIGURATION_START_FLAG/,/\/\/#@CONFIGURATION_END_FLAG/!b' -e '/end/!d;r Configuration.h' -e 'd' "upstream/Board Configuration Files/TH3D_EZBoardLite/Firmware/Marlin/Configuration.h"
+        sed -e '/\/\/#@CONFIGURATION_START_FLAG/{:a; N; /\n\/\/#@CONFIGURATION_END_FLAG$/!ba; r Configuration.h' -e 'd;}' "upstream/Board Configuration Files/TH3D_EZBoardLite/Firmware/Marlin/Configuration.h"
         #cat Configuration_pre.h "upstream/Board Configuration Files/TH3D_EZBoardLite/Firmware/Marlin/Configuration.h" Configuration_post.h > upstream/Firmware/Marlin/Configuration.h
         # ls -al upstream/Firmware
         # ls -al upstream/Firmware/Marlin/
