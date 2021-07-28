@@ -71,6 +71,8 @@ jobs:
       run: |
         cp "upstream/Board Configuration Files/TH3D_EZBoardLite/Firmware/platformio.ini" upstream/Firmware/
         sed -e '/\/\/#@CONFIGURATION_START_FLAG/{:a; N; /\n\/\/#@CONFIGURATION_END_FLAG$/!ba; r Configuration.h' -e 'd;}' "upstream/Board Configuration Files/TH3D_EZBoardLite/Firmware/Marlin/Configuration.h" > upstream/Firmware/Marlin/Configuration.h
+        cp Confiuration_post.h upstream/Firmware/Marlin/
+        echo '#include "Configuration_post.h"' >> upstream/Firmware/Marlin/Configuration.h
     - name: Cache pip
       uses: actions/cache@v2
       with:
