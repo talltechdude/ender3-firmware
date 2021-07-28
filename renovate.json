@@ -28,6 +28,10 @@
                 "digest"
             ],
             "automerge": false
+        },
+        {
+            "matchPackageNames": ["th3dstudio/UnifiedFirmware"],
+            "versionScheme": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)$"
         }
     ]
 }
