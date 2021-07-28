@@ -43,7 +43,7 @@ jobs:
         pwd
         ls -al
         cp "../Board Configuration Files/TH3D_EZBoardLite/Firmware/platformio.ini" .
-        cp "../Board Configuration Files/TH3D_EZBoardLite/Firmware/Marlin/Configuration.h" Marlin/
+        cat ../Configuration_pre.h "../Board Configuration Files/TH3D_EZBoardLite/Firmware/Marlin/Configuration.h" ../Configuration_post.h > Marlin/Configuration.h
         ls -al
         ls -al Marlin/
       working-directory: ./Firmware
