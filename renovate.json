@@ -15,7 +15,7 @@
             "matchStrings": [
                 "repository: (?<depName>.*?)\\sref: (?<currentValue>.*)\\s"
             ],
-            "datasource": "github-releases",
+            "datasourceTemplate": "github-releases",
             "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
         }
     ],
