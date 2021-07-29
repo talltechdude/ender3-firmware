@@ -63,13 +63,6 @@ jobs:
         repository: ${{ env.UPSTREAM_REPO }}
         ref: ${{ env.UPSTREAM_VERSION }}
         path: upstream
-
-    # with:
-      #   repository: talltechdude/ender3-firmware
-    # - run: |
-    #     pwd
-    #     ls -al
-    #     ls -al upstream/
     - name: Prepare custom config
       run: |
         cp "upstream/Board Configuration Files/TH3D_EZBoardLite/Firmware/platformio.ini" upstream/Firmware/
@@ -134,10 +127,3 @@ jobs:
           echo ${{ steps.semantic.outputs.new_release_major_version }}
           echo ${{ steps.semantic.outputs.new_release_minor_version }}
           echo ${{ steps.semantic.outputs.new_release_patch_version }}
-      # - name: Source checkout
-      #   uses: actions/checkout@v2          
-      # - name: Release
-      #   uses: softprops/action-gh-release@v1
-      #   if: startsWith(github.ref, 'refs/tags/')
-      #   with:
-      #     files: firmware.bin
