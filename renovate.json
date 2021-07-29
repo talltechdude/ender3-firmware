@@ -13,7 +13,7 @@
                 "build.yaml$"
             ],
             "matchStrings": [
-                "repository: (?<depName>.*?)\\s+ref: (?<currentValue>.*)\\s"
+                "UPSTREAM_REPO: (?<depName>.*?)\\s+UPSTREAM_VERSION: (?<currentValue>.*)\\s"
             ],
             "datasourceTemplate": "github-releases",
             "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"

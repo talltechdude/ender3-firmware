@@ -40,6 +40,9 @@
     #define UNIFIED_VERSION CUSTOM_VERSION
 #endif
 
+#undef STRING_CONFIG_H_AUTHOR
+#define STRING_CONFIG_H_AUTHOR "TH3D Studio, TallTechDude"
+
 //===========================================================================
 //====================== TTD Post Configuration End =========================
 //===========================================================================
