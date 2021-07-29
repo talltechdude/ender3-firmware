@@ -41,8 +41,8 @@
     #define UNIFIED_VERSION CUSTOM_VERSION
 #endif
 
-#define FAN_PIN P1_22
-#define E0_AUTO_FAN_PIN FAN_PIN
+// #define FAN_PIN P1_22
+// #define E0_AUTO_FAN_PIN FAN_PIN
 
 #undef STRING_CONFIG_H_AUTHOR
 #define STRING_CONFIG_H_AUTHOR "TH3D Studio, TallTechDude"
