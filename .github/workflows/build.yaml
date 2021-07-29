@@ -70,6 +70,7 @@ jobs:
         cp Configuration_post.h upstream/Firmware/Marlin/
         echo '#define CUSTOM_VERSION "TH3D: ${{ env.UPSTREAM_VERSION }}|TTD: ${{ needs.refs.outputs.version }}"' >> upstream/Firmware/Marlin/Configuration.h
         echo '#include "Configuration_post.h"' >> upstream/Firmware/Marlin/Configuration.h
+        echo '#undef USE_CONTROLLER_FAN' >> upstream/Firmware/Marlin/Configuration_adv.h
     - name: Cache pip
       uses: actions/cache@v2
       with:
