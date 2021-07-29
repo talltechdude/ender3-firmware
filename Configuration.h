@@ -25,7 +25,7 @@
 #define LINEAR_ADVANCE
 #define LINEAR_ADVANCE_K 0.05
 #define LCD_LANGUAGE en
-#define NOZZLE_TO_PROBE_OFFSET {-43,-13,-2.57}
+#define NOZZLE_TO_PROBE_OFFSET {-43,-13,-2.68}
 
 #define DEFAULT_Kp 36.17
 #define DEFAULT_Ki 4.23
