@@ -94,7 +94,7 @@ jobs:
     - name: Run PlatformIO
       run: pio run
       working-directory: ./upstream/Firmware
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: firmware
         path: ./upstream/Firmware/.pioenvs/LPC1769/firmware.bin
