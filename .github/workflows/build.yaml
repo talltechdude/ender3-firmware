@@ -16,7 +16,7 @@ jobs:
       new_release_published: ${{ steps.semantic.outputs.new_release_published }}
     steps:
       - name: Source checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Semantic Release
         id: semantic
         uses: cycjimmy/semantic-release-action@v2
@@ -56,9 +56,9 @@ jobs:
       UPSTREAM_REPO: th3dstudio/UnifiedFirmware
       UPSTREAM_VERSION: 2.27
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Checkout upstream firmware
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: ${{ env.UPSTREAM_REPO }}
         ref: ${{ env.UPSTREAM_VERSION }}
@@ -108,7 +108,7 @@ jobs:
     if: ${{ needs.refs.outputs.new_release_published == 'true' }}
     steps:
       - name: Source checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - uses: actions/download-artifact@v2
         with:
           name: firmware
