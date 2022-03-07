@@ -109,7 +109,7 @@ jobs:
     steps:
       - name: Source checkout
         uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: firmware
 
