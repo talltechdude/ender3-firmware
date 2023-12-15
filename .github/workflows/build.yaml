@@ -54,7 +54,7 @@ jobs:
     if: ${{ needs.refs.outputs.new_release_published == 'true' }}
     env:
       UPSTREAM_REPO: th3dstudio/UnifiedFirmware
-      UPSTREAM_VERSION: 2.27
+      UPSTREAM_VERSION: 2.83
     steps:
     - uses: actions/checkout@v2
     - name: Checkout upstream firmware
